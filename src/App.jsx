@@ -1,26 +1,29 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import AfterForm from "./Forms/AfterForm.jsx";
-import Home from "./Home.jsx";
+import Home from "./pages/Home.jsx";
+import StudentLogin from "./pages/StudentLogin.jsx";
+import TeacherLogin from "./pages/TeacherLogin";
+import AfterForm from "./forms/AfterForm.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="student" element={<StudentLogin />} /> */}
+            <Route index element={<Home />} />
+            <Route path="/student" element={<StudentLogin />} />
+            <Route path="/teacherlogin" element={<TeacherLogin />} />
+            <Route path="/student/form" element={<AfterForm />} />
           </Routes>
           {/* <div>
             <h1> Temperature Check</h1>
           </div>
           <AfterForm /> */}
         </main>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
