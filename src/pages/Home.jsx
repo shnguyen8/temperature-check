@@ -6,12 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { Title, SubTitle } from "../components/styles/Home.styled.js";
 
 function Home() {
   return (
     <>
-      <h1>Temperature Check</h1>
-      <h2>I am a..</h2>
+      <Title>Temperature Check</Title>
+      <SubTitle>I am a..</SubTitle>
       <div
         style={{
           display: "flex",
@@ -42,7 +43,7 @@ function Home() {
           </Link>
         </div>
         <div style={{ padding: 20, alignContent: "center" }}>
-          <Link to="/teacherlogin">
+          <Link to="/teacher">
             <Card sx={{ minWidth: 345 }}>
               <CardMedia
                 sx={{ height: 300 }}
