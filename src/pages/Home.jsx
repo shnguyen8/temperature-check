@@ -6,24 +6,24 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import { Title, SubTitle } from "../components/styles/Home.styled.js";
+import { Title, SubTitle, LoginDiv } from "../components/styles/Home.styled.js";
 
 function Home() {
   return (
     <>
       <Title>Temperature Check</Title>
       <SubTitle>I am a..</SubTitle>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "100%",
-          alignContent: "center",
-        }}
+      <LoginDiv
+      // style={{
+      //   display: "flex",
+      //   flexDirection: "row",
+      //   width: "100%",
+      //   alignContent: "center",
+      // }}
       >
         <div
           style={{
-            padding: 20,
+            // padding: 20,
             alignContent: "center",
           }}
         >
@@ -42,7 +42,12 @@ function Home() {
             </Card>
           </Link>
         </div>
-        <div style={{ padding: 20, alignContent: "center" }}>
+        <div
+          style={{
+            // padding: 20,
+            alignContent: "center",
+          }}
+        >
           <Link to="/teacher">
             <Card sx={{ minWidth: 345 }}>
               <CardMedia
@@ -58,7 +63,7 @@ function Home() {
             </Card>
           </Link>
         </div>
-      </div>
+      </LoginDiv>
     </>
   );
 }

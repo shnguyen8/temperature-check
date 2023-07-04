@@ -11,3 +11,11 @@ export const SubTitle = styled.h2`
   text-align: center;
   color: black;
 `;
+
+export const LoginDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 100%;
+  justify-content: space-evenly;
+`;

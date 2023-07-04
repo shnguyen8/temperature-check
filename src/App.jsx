@@ -3,6 +3,7 @@ import GlobalStyle from "././components/styles/App.styled.js";
 import Home from "./pages/Home.jsx";
 import StudentLogin from "./pages/StudentLogin.jsx";
 import TeacherLogin from "./pages/TeacherLogin";
+import TeacherSignUp from "./pages/TeacherSignUp";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import AfterForm from "./Forms/AfterForm";
 import { io } from "socket.io-client";

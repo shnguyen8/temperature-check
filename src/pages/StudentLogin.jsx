@@ -3,18 +3,15 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { Title, SubTitle, LoginDiv } from "../components/styles/Home.styled.js";
 
 function StudentLogin() {
   const [name, setName] = useState("");
   const [classCode, setClassCode] = useState("");
 
-  // const handleNameInput = (name) => {
-  //   if (name.length )
-  // }
-
   return (
     <>
-      <h1>Student Login</h1>
+      <SubTitle>Student Login</SubTitle>
       <Box
         component="form"
         sx={{
