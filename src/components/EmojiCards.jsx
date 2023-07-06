@@ -1,5 +1,10 @@
 import * as React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  ImageDescription,
+  ImageDescriptionLayer,
+  ImageWrap,
+} from "./styles/EmojiCards.styled";
 
 function EmojiCards() {
   const emojis = ["😁", "🙂", "😐", "😟", "😰"];
@@ -12,15 +17,30 @@ function EmojiCards() {
   ];
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
+      <ImageWrap>
+        <img src="http://placehold.it/257x200.jpg"></img>
+        <ImageDescriptionLayer>
+          <ImageDescription>MEGAWATT</ImageDescription>
+        </ImageDescriptionLayer>
+      </ImageWrap>
       {emojis.map((value) => (
         <Card sx={{ maxWidth: 200, minHeight: 200 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 100 }}>{value}</Typography>
+            <Typography sx={{ fontSize: 100, textAlign: "center" }}>
+              {value}
+            </Typography>
           </CardContent>
         </Card>
       ))}
-    </>
+    </Box>
   );
 }
 

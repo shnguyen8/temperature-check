@@ -11,7 +11,7 @@ function AfterForm() {
   return (
     <>
       <h2>How do you feel after today's lesson?</h2>
-      <FormControl>
+      {/* <FormControl>
         <FormLabel id="demo-radio-buttons-group-label">
           Select an emoji below:
         </FormLabel>
@@ -46,7 +46,7 @@ function AfterForm() {
             label="😰 - Very confused! I think I need another explanation of some of the main ideas from today."
           />
         </RadioGroup>
-      </FormControl>
+      </FormControl> */}
       <EmojiCards />
     </>
   );
