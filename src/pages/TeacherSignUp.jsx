@@ -1,12 +1,13 @@
 import * as React from "react";
 import axios from "axios";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  DialogTitle,
+} from "@mui/material";
 
 function TeacherSignUp() {
   const [open, setOpen] = React.useState(false);
@@ -34,9 +35,12 @@ function TeacherSignUp() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Need an account? Sign up!
-      </Button>
+      <div>
+        <h3>Need an account?</h3>
+        <Button variant="outlined" onClick={handleClickOpen}>
+          Sign up!
+        </Button>
+      </div>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Sign Up</DialogTitle>
         <DialogContent>
