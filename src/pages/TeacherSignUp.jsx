@@ -1,4 +1,5 @@
 import * as React from "react";
+import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -9,6 +10,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 
 function TeacherSignUp() {
   const [open, setOpen] = React.useState(false);
+  const [username, setUsername] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -16,6 +20,16 @@ function TeacherSignUp() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4000/temps", { username, email, password })
+      .then((res) => {
+        console.log(res.data);
+      });
+    handleClose();
   };
 
   return (
@@ -37,6 +51,7 @@ function TeacherSignUp() {
             label="Username"
             type="text"
             variant="standard"
+            onChange={(event) => setUsername(event.target.value)}
           />
           <TextField
             autoFocus
@@ -46,6 +61,7 @@ function TeacherSignUp() {
             type="email"
             fullWidth
             variant="standard"
+            onChange={(event) => setEmail(event.target.value)}
           />
           <TextField
             autoFocus
@@ -55,11 +71,12 @@ function TeacherSignUp() {
             type="password"
             fullWidth
             variant="standard"
+            onChange={(event) => setPassword(event.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Create Account</Button>
+          <Button onClick={handleSubmit}>Create Account</Button>
         </DialogActions>
       </Dialog>
     </div>

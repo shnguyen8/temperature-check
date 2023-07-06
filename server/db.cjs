@@ -6,7 +6,7 @@ const pool = new Pool({
   port: 5432,
   database: "temperaturecheck",
   user: "postgres",
-  password: "Password",
+  password: process.env.DB_PASSWORD,
 });
 
 module.exports = pool;
