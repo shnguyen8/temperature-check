@@ -32,5 +32,4 @@ export const ImageWrap = styled.div`
     transform: translateY(0);
   }
   position: relative;
-  width: 50%;
 `;

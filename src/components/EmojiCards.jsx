@@ -23,6 +23,7 @@ function EmojiCards() {
         flexDirection: "row",
         flexWrap: "wrap",
         alignItems: "center",
+        justifyContent: "space-evenly",
       }}
     >
       <ImageWrap>
