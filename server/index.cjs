@@ -41,6 +41,10 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   console.log(`User connected: ${socket.id}`);
+
+  socket.on("send", (data) => {
+    socket.broadcast.emit("receive_message", data);
+  });
 });
 
 app.get("/", (req, res) => {

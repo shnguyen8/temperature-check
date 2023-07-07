@@ -24,7 +24,7 @@ function EmojiCards() {
   ];
 
   const sendEmoji = () => {
-    console.log("HEEHEHEHEHE");
+    console.log("AHHHHHHHHH");
   };
 
   return (
@@ -53,25 +53,16 @@ function EmojiCards() {
               }}
             >
               <CardContent>
-                <Typography sx={{ fontSize: 100, textAlign: "center" }}>
+                <Typography
+                  sx={{ fontSize: 100, textAlign: "center" }}
+                  key="value"
+                >
                   {value}
                 </Typography>
               </CardContent>
             </Card>
           </CardActionArea>
         ))}
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingTop: 8,
-        }}
-      >
-        <Button variant="outlined">Submit</Button>
       </Box>
     </Box>
   );

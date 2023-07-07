@@ -9,7 +9,7 @@ import { io } from "socket.io-client";
 import { Global } from "@emotion/react";
 import StudentDashboard from "./pages/StudentDashboard.jsx";
 
-const socket = io.connect("http://localhost:4000");
+// const socket = io.connect("http://localhost:4000");
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Router>
         <main>
           <Routes>
-            <Route index element={<Home socket={socket} />} />
+            <Route index element={<Home />} />
             <Route path="/student" element={<StudentLogin />} />
             <Route path="/teacher" element={<TeacherLogin />} />
             <Route path="/student/dashboard" element={<StudentDashboard />} />
