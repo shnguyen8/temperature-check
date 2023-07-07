@@ -16,17 +16,32 @@ function StudentLogin() {
         component="form"
         sx={{
           "& > :not(style)": { m: 1, width: "25ch" },
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-evenly",
         }}
         noValidate
         autoComplete="off"
       >
-        <TextField id="outlined-basic" label="Name" variant="outlined" />
+        {/* <TextField id="outlined-basic" label="Name" variant="outlined" /> */}
         <TextField
           id="outlined-basic"
           helperText="Enter the class code given by your teacher!"
           label="Class Code"
           variant="outlined"
         />
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
         <Link to="/student/form">
           <Button variant="outlined">Submit</Button>
         </Link>

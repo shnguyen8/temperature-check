@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TeacherSideNav from "../components/TeacherSideNav";
 import Button from "@mui/material/Button";
+import { SubTitle } from "../components/styles/Home.styled";
 
 function TeacherDashboard() {
   const [authenticated, setAuthenticated] = useState(null);
@@ -9,8 +9,7 @@ function TeacherDashboard() {
 
   return (
     <>
-      <h1> Welcome, ! </h1>
-      <div>{/* <TeacherSideNav /> */}</div>
+      <SubTitle> Welcome, ! </SubTitle>
     </>
   );
 }

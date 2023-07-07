@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import {
   ImageDescription,
   ImageDescriptionLayer,
@@ -17,30 +24,46 @@ function EmojiCards() {
   ];
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "space-evenly",
-      }}
-    >
-      <ImageWrap>
-        <img src="http://placehold.it/257x200.jpg"></img>
-        <ImageDescriptionLayer>
-          <ImageDescription>MEGAWATT</ImageDescription>
-        </ImageDescriptionLayer>
-      </ImageWrap>
-      {emojis.map((value) => (
-        <Card sx={{ maxWidth: 200, minHeight: 200 }}>
-          <CardContent>
-            <Typography sx={{ fontSize: 100, textAlign: "center" }}>
-              {value}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <ImageWrap>
+          <img src="http://placehold.it/257x200.jpg"></img>
+          <ImageDescriptionLayer>
+            <ImageDescription>MEGAWATT</ImageDescription>
+          </ImageDescriptionLayer>
+        </ImageWrap>
+        {emojis.map((value) => (
+          <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
+            <Card sx={{ maxWidth: 200, minHeight: 200 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: 100, textAlign: "center" }}>
+                  {value}
+                </Typography>
+              </CardContent>
+            </Card>
+          </CardActionArea>
+        ))}
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          paddingTop: 8,
+        }}
+      >
+        <Button variant="outlined">Submit</Button>
+      </Box>
     </Box>
   );
 }

@@ -6,11 +6,12 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
 import EmojiCards from "../components/EmojiCards";
+import { SubTitle } from "../components/styles/Home.styled.js";
 
 function AfterForm() {
   return (
     <>
-      <h2>How do you feel after today's lesson?</h2>
+      <SubTitle>How do you feel after today's lesson?</SubTitle>
       {/* <FormControl>
         <FormLabel id="demo-radio-buttons-group-label">
           Select an emoji below:
