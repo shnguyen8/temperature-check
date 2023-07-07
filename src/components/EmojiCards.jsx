@@ -23,6 +23,10 @@ function EmojiCards() {
     "Very confused! I think I need another explanation of some of the main ideas from today.",
   ];
 
+  const sendEmoji = () => {
+    console.log("HEEHEHEHEHE");
+  };
+
   return (
     <Box>
       <Box
@@ -42,7 +46,12 @@ function EmojiCards() {
         </ImageWrap>
         {emojis.map((value) => (
           <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
-            <Card sx={{ maxWidth: 200, minHeight: 200 }}>
+            <Card
+              sx={{ maxWidth: 200, minHeight: 200 }}
+              onClick={(e) => {
+                sendEmoji();
+              }}
+            >
               <CardContent>
                 <Typography sx={{ fontSize: 100, textAlign: "center" }}>
                   {value}

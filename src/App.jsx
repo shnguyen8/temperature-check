@@ -5,9 +5,9 @@ import StudentLogin from "./pages/StudentLogin.jsx";
 import TeacherLogin from "./pages/TeacherLogin";
 import TeacherSignUp from "./pages/TeacherSignUp";
 import TeacherDashboard from "./pages/TeacherDashboard";
-import AfterForm from "./Forms/AfterForm";
 import { io } from "socket.io-client";
 import { Global } from "@emotion/react";
+import StudentDashboard from "./pages/StudentDashboard.jsx";
 
 const socket = io.connect("http://localhost:4000");
 
@@ -21,7 +21,7 @@ function App() {
             <Route index element={<Home socket={socket} />} />
             <Route path="/student" element={<StudentLogin />} />
             <Route path="/teacher" element={<TeacherLogin />} />
-            <Route path="/student/form" element={<AfterForm />} />
+            <Route path="/student/dashboard" element={<StudentDashboard />} />
             <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
           </Routes>
         </main>

@@ -42,7 +42,7 @@ function StudentLogin() {
           justifyContent: "space-evenly",
         }}
       >
-        <Link to="/student/form">
+        <Link to="/student/dashboard">
           <Button variant="outlined">Submit</Button>
         </Link>
       </Box>
