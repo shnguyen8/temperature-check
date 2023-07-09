@@ -8,7 +8,7 @@ import { Button, TextField, Box } from "@mui/material";
 const socket = io.connect("http://localhost:4000");
 
 const sendEmoji = () => {
-  socket.emit("send", { message: "hello", room: "" });
+  socket.emit("send", { message: "hello" });
 };
 
 function StudentDashboard() {

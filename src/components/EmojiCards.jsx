@@ -15,14 +15,14 @@ import {
 
 function EmojiCards() {
   const [selectedCard, setSelectedCard] = useState("");
-  const emojis = ["😁", "🙂", "😐", "😟", "😰"];
-  // const emojiDescriptions = [
-  //   "Great! I think I could explain the main ideas to a friend.",
-  //   "Good. I understand most of what we learned today, but I still have a few questions.",
-  //   "Okay. I have some questions, but I don't feel lost.",
-  //   "Slightly Confused. I have many questions about what we learned today.",
-  //   "Very confused! I think I need another explanation of some of the main ideas from today.",
-  // ];
+  // const emojis = ["😁", "🙂", "😐", "😟", "😰"];
+  const emojiDescriptions = [
+    "Great! I think I could explain the main ideas to a friend.",
+    "Good. I understand most of what we learned today, but I still have a few questions.",
+    "Okay. I have some questions, but I don't feel lost.",
+    "Slightly Confused. I have many questions about what we learned today.",
+    "Very confused! I think I need another explanation of some of the main ideas from today.",
+  ];
 
   const handleCardSelection = (value) => {
     setSelectedCard(value);
@@ -46,7 +46,7 @@ function EmojiCards() {
             <ImageDescription>MEGAWATT</ImageDescription>
           </ImageDescriptionLayer>
         </ImageWrap> */}
-        {emojis.map((value) => (
+        {emojiDescriptions.map((value) => (
           <Box>
             <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
               <Card
@@ -57,7 +57,7 @@ function EmojiCards() {
                 key={value}
               >
                 <CardContent>
-                  <Typography sx={{ fontSize: 100, textAlign: "center" }}>
+                  <Typography sx={{ fontSize: 18, textAlign: "center" }}>
                     {value}
                   </Typography>
                 </CardContent>

@@ -13,14 +13,7 @@ function Home() {
     <>
       <Title>Temperature Check</Title>
       <SubTitle>I am a..</SubTitle>
-      <LoginDiv
-      // style={{
-      //   display: "flex",
-      //   flexDirection: "row",
-      //   width: "100%",
-      //   alignContent: "center",
-      // }}
-      >
+      <LoginDiv>
         <div
           style={{
             // padding: 20,

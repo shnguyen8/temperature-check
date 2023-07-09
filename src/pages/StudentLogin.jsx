@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Title, SubTitle, LoginDiv } from "../components/styles/Home.styled.js";
 import { io } from "socket.io-client";
 
@@ -11,6 +11,18 @@ const socket = io.connect("http://localhost:4000");
 function StudentLogin() {
   const [studentName, setStudentName] = useState("");
   const [room, setRoom] = useState("");
+
+  // const navigate = () => {
+  //   if (room === "123456") {
+  //     useNavigate();
+  //   } else {
+  //     alert("ROOM DOES NOT EXIST");
+  //   }
+  // };
+
+  // function handleNavigate() {
+  //   navigate("/student/dashboard");
+  // }
 
   const joinRoom = () => {
     if (studentName !== "" && room !== "") {
