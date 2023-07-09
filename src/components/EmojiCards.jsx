@@ -24,13 +24,9 @@ function EmojiCards() {
   //   "Very confused! I think I need another explanation of some of the main ideas from today.",
   // ];
 
-  const handleCardSelection = (e) => {
-    setSelectedCard(e.target.value);
-    console.log(selectedCard, "AHHHHH");
-  };
-
-  const sendEmoji = () => {
-    console.log(emojis);
+  const handleCardSelection = (value) => {
+    setSelectedCard(value);
+    console.log(value);
   };
 
   return (
@@ -55,13 +51,13 @@ function EmojiCards() {
             <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
               <Card
                 sx={{ maxWidth: 200, minHeight: 200 }}
-                onClick={handleCardSelection}
+                onClick={() => {
+                  handleCardSelection(value);
+                }}
+                key={value}
               >
                 <CardContent>
-                  <Typography
-                    sx={{ fontSize: 100, textAlign: "center" }}
-                    key="value"
-                  >
+                  <Typography sx={{ fontSize: 100, textAlign: "center" }}>
                     {value}
                   </Typography>
                 </CardContent>
