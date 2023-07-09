@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -14,17 +14,23 @@ import {
 } from "./styles/EmojiCards.styled";
 
 function EmojiCards() {
+  const [selectedCard, setSelectedCard] = useState("");
   const emojis = ["😁", "🙂", "😐", "😟", "😰"];
-  const emojiDescriptions = [
-    "Great! I think I could explain the main ideas to a friend.",
-    "Good. I understand most of what we learned today, but I still have a few questions.",
-    "Okay. I have some questions, but I don't feel lost.",
-    "Slightly Confused. I have many questions about what we learned today.",
-    "Very confused! I think I need another explanation of some of the main ideas from today.",
-  ];
+  // const emojiDescriptions = [
+  //   "Great! I think I could explain the main ideas to a friend.",
+  //   "Good. I understand most of what we learned today, but I still have a few questions.",
+  //   "Okay. I have some questions, but I don't feel lost.",
+  //   "Slightly Confused. I have many questions about what we learned today.",
+  //   "Very confused! I think I need another explanation of some of the main ideas from today.",
+  // ];
+
+  const handleCardSelection = (e) => {
+    setSelectedCard(e.target.value);
+    console.log(selectedCard, "AHHHHH");
+  };
 
   const sendEmoji = () => {
-    console.log("AHHHHHHHHH");
+    console.log(emojis);
   };
 
   return (
@@ -38,30 +44,30 @@ function EmojiCards() {
           justifyContent: "space-evenly",
         }}
       >
-        <ImageWrap>
+        {/* <ImageWrap>
           <img src="http://placehold.it/257x200.jpg"></img>
           <ImageDescriptionLayer>
             <ImageDescription>MEGAWATT</ImageDescription>
           </ImageDescriptionLayer>
-        </ImageWrap>
+        </ImageWrap> */}
         {emojis.map((value) => (
-          <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
-            <Card
-              sx={{ maxWidth: 200, minHeight: 200 }}
-              onClick={(e) => {
-                sendEmoji();
-              }}
-            >
-              <CardContent>
-                <Typography
-                  sx={{ fontSize: 100, textAlign: "center" }}
-                  key="value"
-                >
-                  {value}
-                </Typography>
-              </CardContent>
-            </Card>
-          </CardActionArea>
+          <Box>
+            <CardActionArea sx={{ maxWidth: 200, minHeight: 200 }}>
+              <Card
+                sx={{ maxWidth: 200, minHeight: 200 }}
+                onClick={handleCardSelection}
+              >
+                <CardContent>
+                  <Typography
+                    sx={{ fontSize: 100, textAlign: "center" }}
+                    key="value"
+                  >
+                    {value}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </CardActionArea>
+          </Box>
         ))}
       </Box>
     </Box>

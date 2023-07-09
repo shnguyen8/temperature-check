@@ -9,11 +9,11 @@ import { io } from "socket.io-client";
 const socket = io.connect("http://localhost:4000");
 
 function StudentLogin() {
-  const [name, setName] = useState("");
+  const [studentName, setStudentName] = useState("");
   const [room, setRoom] = useState("");
 
   const joinRoom = () => {
-    if (room !== "") {
+    if (studentName !== "" && room !== "") {
       socket.emit("join_room", room);
     }
   };
@@ -21,6 +21,28 @@ function StudentLogin() {
   return (
     <>
       <SubTitle>Student Login</SubTitle>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          onChange={(e) => {
+            setStudentName(e.target.value);
+          }}
+        />
+      </Box>
       <Box
         component="form"
         sx={{
